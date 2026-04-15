@@ -26,12 +26,13 @@ jobs:
           python Agents.py
           python Skins.py
           python Music.py
+          python Stickers.py
 
       - name: Commit and push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           # Stage all generated files
-          git add gloves_en.json agents_en.json skins_en.json music_en.json
+          git add gloves_en.json agents_en.json skins_en.json music_en.json stickers_en.json
           # Only commit and push if there are actual differences
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Skins, Gloves, and Agents" && git push)
