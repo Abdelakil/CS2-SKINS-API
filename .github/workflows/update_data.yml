@@ -2,8 +2,8 @@ name: Update Data
 
 on:
   schedule:
-    - cron: '0 * * * *' # Changed to every hour so you catch updates faster
-  workflow_dispatch:
+    - cron: '0 * * * *' # Runs every hour
+  workflow_dispatch:      # Manual trigger
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-    - name: Run scripts
+      - name: Run scripts
         run: |
           python Gloves.py
           python Agents.py
@@ -30,6 +30,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # Add all three generated files
+          # Stage all generated files
           git add gloves_en.json agents.json skins_en.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update skins, gloves, and agents" && git push)
+          # Only commit and push if there are actual differences
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Skins, Gloves, and Agents" && git push)
