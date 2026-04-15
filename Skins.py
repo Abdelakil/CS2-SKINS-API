@@ -1,6 +1,14 @@
 import requests
 import json
 
+def compress_url(original_url):
+    """Wraps the URL with Weserv for WebP compression and transparency."""
+    if not original_url:
+        return ""
+    # Remove https:// to keep the Weserv URL clean
+    clean_url = original_url.replace("https://", "")
+    return f"https://images.weserv.nl/?url={clean_url}&output=webp&q=80"
+
 def fetch_skins():
     # Source A: Primary list (Large, but missing defaults)
     url_primary = "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/skins.json"
@@ -19,14 +27,11 @@ def fetch_skins():
         print(f"Error fetching data: {e}")
         return
 
-    # Use a dictionary to store unique skins. 
-    # Key format: "defindex-paint" (e.g., "7-0" or "7-1207")
     merged_skins = {}
 
     # 1. Process Primary Source (ByMykel)
     for item in data_a:
         category_name = item.get("category", {}).get("name", "")
-        # Exclude non-weapons
         if category_name not in ["Gloves", "Agents"] and "weapon" in item:
             defindex = item.get("weapon", {}).get("weapon_id")
             paint = item.get("paint_index")
@@ -37,12 +42,12 @@ def fetch_skins():
                     "weapon_defindex": defindex,
                     "weapon_name": item.get("weapon", {}).get("id"),
                     "paint": str(paint),
-                    "image": item.get("image"),
+                    "image": compress_url(item.get("image")), # Applied here
                     "paint_name": item.get("name"),
                     "legacy_model": item.get("legacy_model", False)
                 }
 
-    # 2. Process Secondary Source (Nereziel) to fill in gaps (especially Paint 0)
+    # 2. Process Secondary Source (Nereziel)
     for item in data_b:
         defindex = item.get("weapon_defindex")
         paint = item.get("paint")
@@ -50,13 +55,12 @@ def fetch_skins():
         if defindex is not None and paint is not None:
             key = f"{defindex}-{paint}"
             
-            # Only add if it's NOT already in our dictionary (like Paint 0)
             if key not in merged_skins:
                 merged_skins[key] = {
                     "weapon_defindex": defindex,
                     "weapon_name": item.get("weapon_name"),
                     "paint": str(paint),
-                    "image": item.get("image"),
+                    "image": compress_url(item.get("image")), # Applied here
                     "paint_name": item.get("paint_name"),
                     "legacy_model": item.get("legacy_model", False)
                 }
@@ -70,7 +74,7 @@ def fetch_skins():
     with open("skins_en.json", "w", encoding="utf-8") as f:
         json.dump(final_list, f, indent=4, ensure_ascii=False)
     
-    print(f"Combined total: {len(final_list)} skins successfully saved.")
+    print(f"Combined total: {len(final_list)} skins successfully compressed and saved.")
 
 if __name__ == "__main__":
     fetch_skins()
