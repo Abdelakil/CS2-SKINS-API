@@ -15,18 +15,33 @@ def fetch_music():
     music_output = []
 
     for item in data:
-        # Extracting exactly what you requested
+        raw_id = item.get("id", "")
+        
+        # SKIP if the ID contains '_st'
+        if "_st" in raw_id:
+            continue
+            
+        try:
+            # Extract number: "music_kit-3" -> "3"
+            clean_id = raw_id.split("-")[1]
+            final_id = int(clean_id)
+        except (IndexError, ValueError):
+            continue
+
         clean_item = {
-            "id": str(item.get("id")), # Ensure ID is a string as per your example
+            "id": final_id,
             "name": item.get("name"),
             "image": item.get("image")
         }
         music_output.append(clean_item)
     
+    # Sort by ID so the list is organized
+    music_output.sort(key=lambda x: x["id"])
+
     with open("music_en.json", "w", encoding="utf-8") as f:
         json.dump(music_output, f, indent=4, ensure_ascii=False)
     
-    print(f"Successfully processed {len(music_output)} music kits.")
+    print(f"Successfully processed {len(music_output)} unique music kits.")
 
 if __name__ == "__main__":
     fetch_music()
