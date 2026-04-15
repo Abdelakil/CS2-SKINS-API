@@ -23,7 +23,7 @@ def fetch_stickers():
             continue
 
         # Construct the custom image URL as per your requirement
-        image_url = f"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-{sticker_id}.png"
+        image_url = item.get("image")
 
         clean_item = {
             "id": sticker_id,
