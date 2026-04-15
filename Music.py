@@ -17,31 +17,31 @@ def fetch_music():
     for item in data:
         raw_id = item.get("id", "")
         
-        # SKIP if the ID contains '_st'
+        # Skip StatTrak versions
         if "_st" in raw_id:
             continue
             
         try:
             # Extract number: "music_kit-3" -> "3"
-            clean_id = raw_id.split("-")[1]
-            final_id = int(clean_id)
-        except (IndexError, ValueError):
+            clean_id_str = raw_id.split("-")[1]
+            # No int() conversion here, keeping it as a string
+        except IndexError:
             continue
 
         clean_item = {
-            "id": final_id,
+            "id": clean_id_str, # This will result in "1", "2", "3"
             "name": item.get("name"),
             "image": item.get("image")
         }
         music_output.append(clean_item)
     
-    # Sort by ID so the list is organized
-    music_output.sort(key=lambda x: x["id"])
+    # Sort numerically based on the ID string
+    music_output.sort(key=lambda x: int(x["id"]))
 
     with open("music_en.json", "w", encoding="utf-8") as f:
         json.dump(music_output, f, indent=4, ensure_ascii=False)
     
-    print(f"Successfully processed {len(music_output)} unique music kits.")
+    print(f"Successfully processed {len(music_output)} kits with string IDs.")
 
 if __name__ == "__main__":
     fetch_music()
