@@ -21,7 +21,7 @@ jobs:
         run: pip install requests
 
       - name: Run filter script
-        run: python filter_gloves.py
+        run: python Gloves.py
 
       - name: Commit and push if changed
         run: |
