@@ -25,8 +25,8 @@ def fetch_and_filter():
             })
 
     # Check if the file already exists and if data is identical
-    if os.path.exists("gloves.json"):
-        with open("gloves.json", "r", encoding="utf-8") as f:
+    if os.path.exists("gloves_en.json"):
+        with open("gloves_en.json", "r", encoding="utf-8") as f:
             existing_data = json.load(f)
         
         if existing_data == filtered_output:
@@ -34,9 +34,9 @@ def fetch_and_filter():
             return # Exit script without writing file
 
     # Save only if there are changes
-    with open("gloves.json", "w", encoding="utf-8") as f:
+    with open("gloves_en.json", "w", encoding="utf-8") as f:
         json.dump(filtered_output, f, indent=4, ensure_ascii=False)
-    print("New data found! gloves.json has been updated.")
+    print("New data found! gloves_en.json has been updated.")
 
 if __name__ == "__main__":
     fetch_and_filter()
