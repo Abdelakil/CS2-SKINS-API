@@ -29,8 +29,9 @@ def fetch_and_filter():
             filtered_output.append(clean_item)
     
     # Save the simplified list to gloves.json
+    # ensure_ascii=False keeps the actual ★ character instead of \u2605
     with open("gloves.json", "w", encoding="utf-8") as f:
-        json.dump(filtered_output, f, indent=4)
+        json.dump(filtered_output, f, indent=4, ensure_ascii=False)
     
     print(f"Successfully processed {len(filtered_output)} items.")
 
