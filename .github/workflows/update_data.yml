@@ -20,16 +20,16 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run scripts
+    - name: Run scripts
         run: |
           python Gloves.py
           python Agents.py
+          python Skins.py
 
       - name: Commit and push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # This adds ALL changed json files
-          git add gloves_en.json agents_en.json
-          # This commits only if there are actual changes in either file
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Gloves and Agents" && git push)
+          # Add all three generated files
+          git add gloves_en.json agents.json skins_en.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update skins, gloves, and agents" && git push)
