@@ -438,5 +438,35 @@
         "id": "96",
         "name": "Music Kit | Tigercub, The Perfume of Decay",
         "image": "https://images.weserv.nl/?url=community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuIXKQ4ER24YXLugipQEn0mpPl_icD6qD4a6c7I6XGWTbFx7ZysbIxG3C3zEtz4G6BmImoImXXMFEshFifrQ&output=webp&q=80"
+    },
+    {
+        "id": "98",
+        "name": "Music Kit | ALRT, DOPAMINE HIT",
+        "image": "https://images.weserv.nl/?url=raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images/econ/music_kits/alrt_01_png.png&output=webp&q=80"
+    },
+    {
+        "id": "99",
+        "name": "Music Kit | Altare, Change My Mind",
+        "image": "https://images.weserv.nl/?url=raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images/econ/music_kits/altare_01_png.png&output=webp&q=80"
+    },
+    {
+        "id": "100",
+        "name": "Music Kit | borne, Give It To Me",
+        "image": "https://images.weserv.nl/?url=raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images/econ/music_kits/borne_01_png.png&output=webp&q=80"
+    },
+    {
+        "id": "101",
+        "name": "Music Kit | Pirapus, EVERYNITE",
+        "image": "https://images.weserv.nl/?url=raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images/econ/music_kits/pirapus_01_png.png&output=webp&q=80"
+    },
+    {
+        "id": "102",
+        "name": "Music Kit | Repiet & Julia Kleijn, On And On",
+        "image": "https://images.weserv.nl/?url=raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images/econ/music_kits/repiet_01_png.png&output=webp&q=80"
+    },
+    {
+        "id": "103",
+        "name": "Music Kit | ShockOne, Voices",
+        "image": "https://images.weserv.nl/?url=raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images/econ/music_kits/shockone_01_png.png&output=webp&q=80"
     }
 ]
