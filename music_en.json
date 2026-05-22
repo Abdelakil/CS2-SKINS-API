@@ -442,31 +442,31 @@
     {
         "id": "98",
         "name": "Music Kit | ALRT, DOPAMINE HIT",
-        "image": "https://images.weserv.nl/?url=raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images/econ/music_kits/alrt_01_png.png&output=webp&q=80"
+        "image": "https://images.weserv.nl/?url=cdn.steamstatic.com/apps/730/icons/econ/music_kits/alrt_01.91d38c0559f12cd45b2cf206989cc758c75655e7.png&output=webp&q=80"
     },
     {
         "id": "99",
         "name": "Music Kit | Altare, Change My Mind",
-        "image": "https://images.weserv.nl/?url=raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images/econ/music_kits/altare_01_png.png&output=webp&q=80"
+        "image": "https://images.weserv.nl/?url=cdn.steamstatic.com/apps/730/icons/econ/music_kits/altare_01.c06c0fde1220ed0f8d4f626149d3a881f0ffa300.png&output=webp&q=80"
     },
     {
         "id": "100",
         "name": "Music Kit | borne, Give It To Me",
-        "image": "https://images.weserv.nl/?url=raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images/econ/music_kits/borne_01_png.png&output=webp&q=80"
+        "image": "https://images.weserv.nl/?url=cdn.steamstatic.com/apps/730/icons/econ/music_kits/borne_01.ccdce1df1d5da7a392aa2df2390899d27844cb0a.png&output=webp&q=80"
     },
     {
         "id": "101",
         "name": "Music Kit | Pirapus, EVERYNITE",
-        "image": "https://images.weserv.nl/?url=raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images/econ/music_kits/pirapus_01_png.png&output=webp&q=80"
+        "image": "https://images.weserv.nl/?url=cdn.steamstatic.com/apps/730/icons/econ/music_kits/pirapus_01.7d45f00bdce59027d7bab82106fdd8f3a9fbb111.png&output=webp&q=80"
     },
     {
         "id": "102",
         "name": "Music Kit | Repiet & Julia Kleijn, On And On",
-        "image": "https://images.weserv.nl/?url=raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images/econ/music_kits/repiet_01_png.png&output=webp&q=80"
+        "image": "https://images.weserv.nl/?url=cdn.steamstatic.com/apps/730/icons/econ/music_kits/repiet_01.b0c8c7a7953db2d692b1132b49c5d6129498cac9.png&output=webp&q=80"
     },
     {
         "id": "103",
         "name": "Music Kit | ShockOne, Voices",
-        "image": "https://images.weserv.nl/?url=raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images/econ/music_kits/shockone_01_png.png&output=webp&q=80"
+        "image": "https://images.weserv.nl/?url=cdn.steamstatic.com/apps/730/icons/econ/music_kits/shockone_01.13bf87dcd7908378786692039ca3dd959d1b20b4.png&output=webp&q=80"
     }
 ]
